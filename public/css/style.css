@@ -1,6 +1,8 @@
+/*Make H1 red*/
 h1{
     color: red;
 }
+/*Turn completed tasks gray and strike through*/
 .completed{
     color: gray;
     text-decoration: line-through;
