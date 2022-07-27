@@ -1,47 +1,66 @@
+<%# declare doctype %>
 <!DOCTYPE html>
+<%# English %>
 <html lang="en">
+<%# open head  %>
 <head>
+    <%# character set %>
     <meta charset="UTF-8">
+    <%# browswer compatability %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%# viewport info %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%# document name %>
     <title>Document</title>
+    <%# link to font %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <%# link to css file %>
     <link rel="stylesheet" href="css/style.css">
+<%# close head %>
 </head>
+
+<%# open body %>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Todo List: </h1>
+    <%# headline %>
+    <h1>Todo List: </h1> 
+    <%# unordered list %>
     <ul class="todoItems">
+    <%# for each item, run following %>
     <% for(let i=0; i < items.length; i++) {%>
+        <%# list item %>
         <li class="item">
+            <%# if item is marked as completed is true run the next line %>
             <% if(items[i].completed === true) {%>
+                <%# use class completed %>
                 <span class='completed'><%= items[i].thing %></span>
+            <%# if item is marked as completed is false run the next line %>
             <% }else{ %>
+                <%# leave item as is %>
                 <span><%= items[i].thing %></span>
             <% } %>    
+            <%# use class for trash %>
             <span class='fa fa-trash'></span>
+        <%# close li %>
         </li>
     <% } %>
+    <%# close ul %>
     </ul>
-
+    <%# subhead of items left %>
     <h2>Left to do: <%= left %></h2>
-
+    <%# subhead to add item %>
     <h2>Add A Todo:</h2>
-
+    <%# form to add item %>
     <form action="/addTodo" method="POST">
+        <%# input to add item %>
         <input type="text" placeholder="Thing To Do" name="todoItem">
+        <%# submit item %>
         <input type="submit">
+    <%# close form %>
     </form>
     
-
+    <%# link to js file %>
     <script src='js/main.js'></script>
+<%# close body %>
 </body>
+<%# close html %>
 </html>

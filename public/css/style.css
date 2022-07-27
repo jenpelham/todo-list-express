@@ -1,9 +1,12 @@
-/*Make H1 red*/
+/*select H1*/
 h1{
+    /*set color as red*/
     color: red;
 }
-/*Turn completed tasks gray and strike through*/
+/*select class completed*/
 .completed{
+    /*set color as gray*/
     color: gray;
+    /*strike through the text*/
     text-decoration: line-through;
 }
