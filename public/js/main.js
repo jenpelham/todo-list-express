@@ -23,10 +23,14 @@ Array.from(itemCompleted).forEach((element)=>{
 
 //delete item function
 async function deleteItem(){
+    //selected task item
     const itemText = this.parentNode.childNodes[1].innerText
     try{
+        //respond with fetch deleteItem
         const response = await fetch('deleteItem', {
+            //use delete method
             method: 'delete',
+            //use this header
             headers: {'Content-Type': 'application/json'},
             //turn input into string
             body: JSON.stringify({
@@ -47,12 +51,18 @@ async function deleteItem(){
 }
 //mark task as completed
 async function markComplete(){
+    //selected task item
     const itemText = this.parentNode.childNodes[1].innerText
     try{
+        //respond with fetch markComplete
         const response = await fetch('markComplete', {
+            //use put method
             method: 'put',
+            //use this header
             headers: {'Content-Type': 'application/json'},
+            //turn input into string
             body: JSON.stringify({
+                //text from user
                 'itemFromJS': itemText
             })
           })
@@ -69,12 +79,18 @@ async function markComplete(){
 }
 //mark task as uncompleted
 async function markUnComplete(){
+    //selected task item
     const itemText = this.parentNode.childNodes[1].innerText
     try{
+        //respond with fetch markUnComplete
         const response = await fetch('markUnComplete', {
+            //use put method
             method: 'put',
+            //use this header
             headers: {'Content-Type': 'application/json'},
+            //turn input into string
             body: JSON.stringify({
+                //text from user
                 'itemFromJS': itemText
             })
           })
